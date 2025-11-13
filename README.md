@@ -1,56 +1,73 @@
 # Artificial Intelligence Algorithm Project: Optimization of Biscuit Production
 
-This project applies AI algorithms to optimize biscuit production from a fixed-size dough roll, maximizing profit while respecting manufacturing constraints. Two approaches are implemented: Constraint Satisfaction with Dynamic Programming (CSP + DP) and a Genetic Algorithm (GA).
+This project applies **AI algorithms** to optimize biscuit production from a fixed-size dough roll, maximizing profit while adhering to manufacturing constraints. Two approaches are implemented: **Constraint Satisfaction with Dynamic Programming (CSP + DP)** and a **Genetic Algorithm (GA)**.
 
-🎯 Problem Statement
+---
 
-A biscuit factory needs to arrange various biscuit types on a 500-position dough roll to maximize total production and profit, while ensuring:
-No overlapping biscuits
-Defect thresholds are not violated
-Biscuits are placed at integer positions
-Total biscuit length does not exceed the dough roll
-Penalty of -1 per unused dough position
+## 🎯 Problem Statement
 
-⚙️ Algorithms Implemented
-1. CSP with Dynamic Programming
+A biscuit factory needs to arrange various biscuit types on a **500-position dough roll** to maximize production and profit, while ensuring:
 
-Uses a DP table to compute the maximum score from each position.
+* No overlapping biscuits
+* Defect thresholds are not violated
+* Biscuits are placed at integer positions
+* Total biscuit length does not exceed the dough roll
+* Penalty of **-1** per unused dough position
 
-Biscuits are prioritized by value-to-length ratio.
+---
 
-Feasibility checks handle defect thresholds efficiently.
+## ⚙️ Algorithms Implemented
 
-Transition: skip a position (penalty) or place the highest-value valid biscuit.
+### 1. CSP with Dynamic Programming
 
-2. Genetic Algorithm (GA)
+* Uses a DP table to compute maximum score from each position
+* Biscuits are prioritized by **value-to-length ratio**
+* Feasibility checks handle defect thresholds efficiently
+* Transition: skip a position (penalty) or place the highest-value valid biscuit
 
-Chromosome: 500-position array with biscuit IDs or -1 for unused positions.
-Fitness: sum of biscuit values minus penalties for unused positions.
-Evolutionary Operators:
-Selection: Tournament
-Crossover: Single-point
-Mutation: Randomly replace biscuit placement
+### 2. Genetic Algorithm (GA)
 
-🍪 Biscuit Types
-ID	Length	Value	Max Defects (a, b, c)
-0	4	3	1,2,3
-1	5	4	4,2,2
-2	1	2	1,2,1
-3	2	3	2,1,2
-📈 Results
-Algorithm	Best Score
-CSP + DP	715
-Genetic Algorithm (GA)	771
+* **Chromosome:** 500-position array with biscuit IDs or -1 for unused positions
+* **Fitness Function:** sum of biscuit values minus penalties for unused positions
+* **Evolutionary Operators:**
 
-The GA outperformed CSP + DP, showing stronger exploration and better handling of complex constraints.
+  * Selection: Tournament
+  * Crossover: Single-point
+  * Mutation: Random replacement of biscuit placement
 
-✅ Conclusion
+---
 
-The Genetic Algorithm is recommended for solving the biscuit production problem due to its ability to find higher-profit arrangements under multiple constraints.
+## 🍪 Biscuit Types
 
-⚙️ Technologies Used
+| ID | Length | Value | Max Defects (a, b, c) |
+| -- | ------ | ----- | --------------------- |
+| 0  | 4      | 3     | 1, 2, 3               |
+| 1  | 5      | 4     | 4, 2, 2               |
+| 2  | 1      | 2     | 1, 2, 1               |
+| 3  | 2      | 3     | 2, 1, 2               |
 
-Python
-AI/Optimization Libraries (NumPy, random, etc.)
-Dynamic Programming
-Genetic Algorithm techniques
+---
+
+## 📈 Results
+
+| Algorithm              | Best Score |
+| ---------------------- | ---------- |
+| CSP + DP               | 715        |
+| Genetic Algorithm (GA) | 771        |
+
+> The GA outperformed CSP + DP, showing stronger exploration and better handling of complex constraints.
+
+---
+
+## ✅ Conclusion
+
+The **Genetic Algorithm** is recommended for solving the biscuit production problem due to its ability to find higher-profit arrangements under multiple constraints.
+
+---
+
+## 🛠️ Technologies Used
+
+* Python
+* AI/Optimization Libraries (NumPy, random, etc.)
+* Dynamic Programming
+* Genetic Algorithm techniques
